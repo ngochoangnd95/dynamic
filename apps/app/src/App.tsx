@@ -1,35 +1,166 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import { Button } from 'ui'
+import DynamicForm, { FIELD_TYPE, IField } from 'ui/common/dynamic-form'
+import { Form } from 'antd'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [form] = Form.useForm()
+
+  const fields: IField[] = [
+    {
+      id: 'text',
+      name: 'text',
+      type: FIELD_TYPE.TEXT,
+      formItemProps: {
+        label: 'Text',
+      },
+      breakpoint: { xs: 24, md: 16 },
+    },
+    {
+      id: 'password',
+      name: 'password',
+      type: FIELD_TYPE.PASSWORD,
+      formItemProps: {
+        label: 'Password',
+      },
+      breakpoint: { xs: 24, md: 8 },
+    },
+    {
+      id: 'number',
+      name: 'number',
+      type: FIELD_TYPE.NUMBER,
+      formItemProps: {
+        label: 'Number',
+      },
+    },
+    {
+      id: 'select',
+      name: 'select',
+      type: FIELD_TYPE.SELECT,
+      formItemProps: {
+        label: 'Select',
+      },
+      inputProps: {
+        options: [
+          { value: '1', label: 'Fresher' },
+          { value: '2', label: 'Junior' },
+          { value: '3', label: 'Middle' },
+          { value: '4', label: 'Senior' },
+        ],
+        mode: 'multiple',
+      },
+    },
+    {
+      id: 'checkbox',
+      name: 'checkbox',
+      type: FIELD_TYPE.CHECKBOX,
+      formItemProps: {
+        label: 'Checkbox',
+      },
+      inputProps: {
+        options: [
+          { value: '1', label: 'Fresher' },
+          { value: '2', label: 'Junior' },
+          { value: '3', label: 'Middle' },
+          { value: '4', label: 'Senior' },
+        ]
+      },
+      breakpoint: { xs: 24, md: 12 },
+    },
+    {
+      id: 'radio',
+      name: 'radio',
+      type: FIELD_TYPE.RADIO,
+      formItemProps: {
+        label: 'Radio',
+      },
+      inputProps: {
+        options: [
+          { value: '1', label: 'Fresher' },
+          { value: '2', label: 'Junior' },
+          { value: '3', label: 'Middle' },
+          { value: '4', label: 'Senior' },
+        ]
+      },
+      breakpoint: { xs: 24, md: 12 },
+    },
+    {
+      id: 'date',
+      name: 'date',
+      type: FIELD_TYPE.DATE,
+      formItemProps: {
+        label: 'Date picker',
+      },
+      inputProps: {
+        format: 'DD/MM/YYYY',
+      },
+      breakpoint: { xs: 8 },
+    },
+    {
+      id: 'time',
+      name: 'time',
+      type: FIELD_TYPE.TIME,
+      formItemProps: {
+        label: 'Time picker',
+      },
+      inputProps: {
+        format: 'HH:mm',
+      },
+      breakpoint: { xs: 8 },
+    },
+    {
+      id: 'upload',
+      name: 'upload',
+      type: FIELD_TYPE.FILE,
+      formItemProps: {
+        label: 'Upload file/image',
+      },
+    },
+    {
+      id: 'template',
+      name: 'template',
+      type: FIELD_TYPE.TEMPLATE,
+      formItemProps: {
+        label: 'Template',
+      },
+    },
+    {
+      id: 'group',
+      name: 'group',
+      type: FIELD_TYPE.GROUP,
+      children: [
+        {
+          id: 'name',
+          name: 'name',
+          type: FIELD_TYPE.TEXT,
+          formItemProps: {
+            label: 'Name',
+          },
+        },
+        {
+          id: 'gender',
+          name: 'gender',
+          type: FIELD_TYPE.SELECT,
+          formItemProps: {
+            label: 'Gender',
+          },
+          inputProps: {
+            options: [
+              { value: '1', label: 'Male' },
+              { value: '2', label: 'Female' },
+            ]
+          },
+        },
+      ],
+      canModify: true,
+    }
+  ]
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Button />
-    </div>
+    <DynamicForm
+      form={form}
+      name='demo'
+      fields={fields}
+      onValuesChange={(changedValue, allValues) => console.log(allValues)}
+    />
   )
 }
 
