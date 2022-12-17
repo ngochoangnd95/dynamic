@@ -50,13 +50,13 @@ Có 3 ưu điểm vượt trội của Ant Design nếu so sánh với Material:
 
 - Ant Design cân bằng được giữa sự sử dụng đơn giản với khả năng tuỳ biến. Ví dụ component `Select`, cách sử dụng đơn giản nhất đó là truyền mảng `options` vào, nhưng bạn vẫn có nhiều lựa chọn tuỳ biến như `dropdownRender`, `optionFilterProps`,... rồi mới đến biện pháp cuối cùng là custom render bằng `children`. Với component `Select` của Material, bạn không có nhiều lựa chọn như vậy, mà phải trực tiếp render từng `MenuItem`.
 
-Với sự trợ giúp đắc lực của Ant Design, tôi đã xây dựng được codebase cân bằng được sự đơn giản, đồng nhất, tường minh mà vẫn đem lại khả năng tuỳ biến cao. Các bạn có thể xem demo tại link []() và xem code mẫu tại file [App.tsx](apps/app/src/App.tsx).
+Với sự trợ giúp đắc lực của Ant Design, tôi đã xây dựng được codebase cân bằng được sự đơn giản, đồng nhất, tường minh mà vẫn đem lại khả năng tuỳ biến cao. Các bạn có thể xem demo tại địa chỉ [https://dynamic-g3moyfq9l-ngochoangnd95.vercel.app/](https://dynamic-g3moyfq9l-ngochoangnd95.vercel.app/) và xem code mẫu tại file [App.tsx](apps/app/src/App.tsx).
 
 # Nguyên liệu
 
 1. [Ant Design](https://ant.design/components/overview) (v^5)
 2. [Turborepo](https://turbo.build/repo)
-3. [Vite](https://vitejs.dev/) + React
+3. [Vite](https://vitejs.dev/) + React + Typescript
 4. Yarn hoặc npm (ở đây tôi chọn yarn)
 
 # Bắt đầu
@@ -90,3 +90,14 @@ Với sự trợ giúp đắc lực của Ant Design, tôi đã xây dựng đư
     ```
 
 Chi tiết cách sử dụng Turborepo mời các bạn tham khảo [document](https://turbo.build/repo/docs) chính thức của Turborepo, hoặc tham khảo bài viết trên [Notion](https://hoangtv.notion.site/Coding-911ab28cf8f74b63b2f213cfcac98091) cá nhân của tôi.
+
+# Thách thức
+
+Codebase trên vẫn chưa hoàn thiện, sẽ cập nhật thêm các nội dung sau:
+
+1. Hoàn thiện các input đang dang dở như upload, template.
+2. Bổ sung thêm các ví dụ tuỳ biến để chứng minh khả năng sử dụng linh hoạt của codebase này.
+3. Thêm tính năng kéo thả.
+4. Bổ sung thêm các loại field khác như email, link, realtion, rollup, formula.
+5. Tạo backend service giúp lưu trữ định nghĩa field động và thực hiện được các chức năng thêm/sửa/xoá field động.
+6. Hiển thị dữ liệu đa dạng với kiểu bảng, list, board (kanban),... giống như Notion.
