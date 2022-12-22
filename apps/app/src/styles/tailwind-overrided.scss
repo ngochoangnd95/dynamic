@@ -1,0 +1,71 @@
+@import './variable';
+@import './mixin';
+
+.ant-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  &.ant-btn-primary {
+    background-color: $primary-color;
+  }
+
+  &.ant-btn-circle {
+    color: #8D8D8D;
+    background-color: white;
+
+    &>svg {
+      margin: auto;
+    }
+  }
+
+  &.ant-btn-default:not(&.ant-btn-icon-only) {
+    color: $primary-color;
+    border-color: $primary-color;
+
+    &:hover {
+      background-color: #fff7e9;
+    }
+  }
+
+  &>svg {
+    font-size: 18px;
+  }
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: inline-block;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+.ant-input-number,
+.ant-picker {
+  width: 100%;
+}
+
+.materialStyle {
+  &.ant-form {
+    &.ant-form-middle {
+      @include materialStyle(32px);
+    }
+
+    &.ant-form-large {
+      @include materialStyle(40px);
+    }
+  }
+}
