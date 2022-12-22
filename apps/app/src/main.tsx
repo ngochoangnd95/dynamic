@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Routes from './routes'
-import './styles/index.css'
-import './styles/tailwind-overrided.scss'
+import App from './App'
+import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <Routes />
+    <App />
   </React.StrictMode>,
 )
