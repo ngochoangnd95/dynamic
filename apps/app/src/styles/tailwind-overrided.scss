@@ -34,18 +34,23 @@
   }
 }
 
-.ant-checkbox-group {
-  .ant-checkbox {
-    .ant-checkbox-inner {
-      width: 20px;
-      height: 20px;
-      border-radius: 5px;
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: inline-block;
+}
 
-      &::after {
-        left: calc(50% - 5px);
-      }
-    }
-  }
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
 }
 
 .ant-input-number,

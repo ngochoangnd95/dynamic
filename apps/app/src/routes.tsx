@@ -1,11 +1,11 @@
 import React from "react"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Overview from "./pages/overview"
 
 const Root = React.lazy(() => import('./pages/root'))
 const ErrorPage = React.lazy(() => import('./pages/error-page'))
+const Overview = React.lazy(() => import('./pages/overview'))
 
-function App() {
+function Routes() {
   const router = createBrowserRouter([
     {
       path: '/',
@@ -15,7 +15,7 @@ function App() {
         {
           path: '/overview',
           element: <Overview />,
-        }
+        },
       ],
     }
   ])
@@ -24,4 +24,4 @@ function App() {
   )
 }
 
-export default App
+export default Routes

@@ -1,7 +1,8 @@
-import { ConfigProvider } from "antd"
+import { ConfigProvider, Layout } from "antd"
 import { ThemeConfig } from "antd/es/config-provider/context"
 import React, { Suspense } from "react"
 import { Outlet } from "react-router-dom"
+import SidebarMenu from "../../components/sidebar-menu"
 
 interface RootProps {
 }
@@ -13,15 +14,23 @@ const theme: ThemeConfig = {
 }
 
 const Root = (props: RootProps) => {
+
   return (
     <ConfigProvider theme={theme}>
-      <section className="flex flex-col min-h-screen">
-        <main className="flex-auto py-5 px-0 sm:px-5">
-          <Suspense>
-            <Outlet />
-          </Suspense>
-        </main>
-      </section>
+      <Layout className="min-h-screen">
+        {/* <Layout.Sider>
+          <SidebarMenu />
+        </Layout.Sider> */}
+        <Layout className="bg-white p-3">
+          {/* <Layout.Header></Layout.Header> */}
+          <Layout.Content>
+            <Suspense>
+              <Outlet />
+            </Suspense>
+          </Layout.Content>
+          {/* <Layout.Footer></Layout.Footer> */}
+        </Layout>
+      </Layout>
     </ConfigProvider>
   )
 }
