@@ -36,6 +36,7 @@ export const DEFAULT_INPUT_PROPS: any = {
   },
   [FIELD_TYPE.SELECT]: <SelectProps>{
     allowClear: true,
+    showAction: ['focus', 'click'],
   },
   [FIELD_TYPE.AUTOCOMPLETE]: <AutoCompleteProps>{
     allowClear: true,
