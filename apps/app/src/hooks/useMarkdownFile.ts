@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
-const useMarkdownFile = (path: string) => {
+const useMarkdownFile = (importLoader: Promise<any>) => {
   const [data, setData] = useState<string>('')
   useEffect(() => {
-    import(path)
+    importLoader
       .then(res => {
         fetch(res.default)
           .then(res => res.text())
