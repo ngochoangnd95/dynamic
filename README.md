@@ -20,7 +20,7 @@ Chán cảnh suốt ngày phải code lặp đi lặp lại và fix những bug 
 
 Tôi may mắn được tiếp cận với câu trả lời cho vấn đề này từ dự án đầu tiên của tôi cách đây 3 năm, đó là xây dựng bộ UI component phân loại theo loại field, nhằm đáp ứng khả năng render field động.
 
-```
+```text
 <DynamicField { type } />
 │ (dựa vào type)
 │

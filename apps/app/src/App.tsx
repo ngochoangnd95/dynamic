@@ -3,7 +3,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './pages/error-page'
 import Root from './pages/root'
 
-const Introduction = React.lazy(() => import('./pages/introduction'))
+const Home = React.lazy(() => import('./pages/home'))
+const Philosophy = React.lazy(() => import('./pages/philosophy'))
 
 const App = () => {
   const router = createBrowserRouter([
@@ -13,9 +14,13 @@ const App = () => {
       errorElement: <ErrorPage />,
       children: [
         {
-          path: 'introduction',
-          element: <Introduction />
-        }
+          path: '',
+          element: <Home />
+        },
+        {
+          path: 'philosophy',
+          element: <Philosophy />
+        },
       ]
     },
   ])

@@ -10,15 +10,15 @@ const Root = () => {
       key: '',
       label: (
         <Link to={'/'}>
-          Home
+          Giới thiệu
         </Link>
       ),
     },
     {
-      key: 'introduction',
+      key: 'philosophy',
       label: (
-        <Link to={'/introduction'}>
-          Introduction
+        <Link to={'/philosophy'}>
+          Triết lý
         </Link>
       ),
     },
