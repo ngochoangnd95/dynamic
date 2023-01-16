@@ -1,9 +1,10 @@
 import { Layout, Menu, MenuProps } from 'antd'
 import { Suspense } from 'react'
-import { Link, Outlet, useMatch } from 'react-router-dom'
+import { Link, Outlet, useLocation } from 'react-router-dom'
 
 const Root = () => {
-  const match = useMatch('/:key')
+  const location = useLocation()
+  const selectedKeys = location.pathname.split('/').pop()
 
   const menuItems: MenuProps['items'] = [
     {
@@ -22,6 +23,20 @@ const Root = () => {
         </Link>
       ),
     },
+    {
+      key: 'custom',
+      label: 'Tuỳ biến',
+      children: [
+        {
+          key: 'select',
+          label: (
+            <Link to={'/custom/select'}>
+              Select
+            </Link>
+          )
+        }
+      ]
+    },
   ]
 
   return (
@@ -31,7 +46,8 @@ const Root = () => {
           items={menuItems}
           mode='inline'
           className='h-full'
-          selectedKeys={[match?.params.key || '']}
+          selectedKeys={[selectedKeys || '']}
+          defaultOpenKeys={['custom']}
         />
       </Layout.Sider>
       <Layout>

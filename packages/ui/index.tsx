@@ -1,3 +1,4 @@
 import * as React from "react";
 
-export * from './common/dynamic-form'
+export * from './common'
+export * from './shared'

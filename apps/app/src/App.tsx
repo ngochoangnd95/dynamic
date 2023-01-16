@@ -5,6 +5,7 @@ import Root from './pages/root'
 
 const Home = React.lazy(() => import('./pages/home'))
 const Philosophy = React.lazy(() => import('./pages/philosophy'))
+const Select = React.lazy(() => import('./pages/custom/select'))
 
 const App = () => {
   const router = createBrowserRouter([
@@ -20,6 +21,15 @@ const App = () => {
         {
           path: 'philosophy',
           element: <Philosophy />
+        },
+        {
+          path: 'custom',
+          children: [
+            {
+              path: 'select',
+              element: <Select />
+            }
+          ]
         },
       ]
     },
