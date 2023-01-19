@@ -24,6 +24,14 @@ const Root = () => {
       ),
     },
     {
+      key: 'dynamic-field',
+      label: (
+        <Link to={'/dynamic-field'}>
+          DynamicField
+        </Link>
+      ),
+    },
+    {
       key: 'custom',
       label: 'Tuỳ biến',
       children: [

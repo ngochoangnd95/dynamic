@@ -5,6 +5,7 @@ import Root from './pages/root'
 
 const Home = React.lazy(() => import('./pages/home'))
 const Philosophy = React.lazy(() => import('./pages/philosophy'))
+const DynamicField = React.lazy(() => import('./pages/dynamic-field'))
 const Select = React.lazy(() => import('./pages/custom/select'))
 
 const App = () => {
@@ -21,6 +22,10 @@ const App = () => {
         {
           path: 'philosophy',
           element: <Philosophy />
+        },
+        {
+          path: 'dynamic-field',
+          element: <DynamicField />
         },
         {
           path: 'custom',
