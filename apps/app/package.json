@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.0",
-    "@uiw/react-md-editor": "^3.20.2",
+    "@mdx-js/react": "^2.2.1",
+    "@mdx-js/rollup": "^2.2.1",
     "antd": "^5.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -19,6 +20,7 @@
     "ui": "*"
   },
   "devDependencies": {
+    "@types/mdx": "^2.0.3",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",

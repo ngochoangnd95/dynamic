@@ -1,3 +1,4 @@
+import CustomMDXProvider from '@/provider'
 import { Layout, Menu, MenuProps } from 'antd'
 import { Suspense } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
@@ -60,11 +61,11 @@ const Root = () => {
       </Layout.Sider>
       <Layout>
         <Layout.Content className='bg-white p-2'>
-          <div data-color-mode='light'>
+          <CustomMDXProvider>
             <Suspense>
               <Outlet />
             </Suspense>
-          </div>
+          </CustomMDXProvider>
         </Layout.Content>
       </Layout>
     </Layout>

@@ -1,3 +1,3 @@
-import Philosophy from "./Philosophy";
+import Philosophy from "./Philosophy.mdx";
 
 export default Philosophy

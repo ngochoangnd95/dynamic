@@ -1,3 +1,3 @@
-import DynamicField from "./DynamicField";
+import DynamicField from "./DynamicField.mdx";
 
 export default DynamicField
