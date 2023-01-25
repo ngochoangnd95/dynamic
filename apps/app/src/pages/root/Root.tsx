@@ -60,12 +60,16 @@ const Root = () => {
         />
       </Layout.Sider>
       <Layout>
-        <Layout.Content className='bg-white p-2'>
-          <CustomMDXProvider>
-            <Suspense>
-              <Outlet />
-            </Suspense>
-          </CustomMDXProvider>
+        <Layout.Content className='bg-white'>
+          <div data-color-mode='light'>
+            <div className='wmde-markdown p-2'>
+              <CustomMDXProvider>
+                <Suspense>
+                  <Outlet />
+                </Suspense>
+              </CustomMDXProvider>
+            </div>
+          </div>
         </Layout.Content>
       </Layout>
     </Layout>
